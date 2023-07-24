@@ -17,7 +17,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: "./index.html",   // Template file for generating the HTML file in the output directory
-        title: "JATE",              // Title to be used in the generated HTML file
+        title: "J.A.T.E",              // Title to be used in the generated HTML file
       }),
       new InjectManifest({
         swSrc: "./src-sw.js",       // Source file for service worker configuration
