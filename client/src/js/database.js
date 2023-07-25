@@ -17,7 +17,7 @@ export const putDb = async (content) => {
   const txtEditorDB = await openDB("jate", 1);
   const transVar = txtEditorDB.transaction("jate", "readwrite");
   const storeVar = transVar.objectStore("jate");
-  const request = storeVar.put({ id: 1, value: content });
+  const request = storeVar.put({ value: content });
 
   const result = await request;
   console.log("Data saved to database", result.value);
@@ -25,13 +25,16 @@ export const putDb = async (content) => {
 
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
-  const txtEditorDB = await openDB("jate", "readonly");
-  const storeVar = trasnVar.objectStore("jate");
-  const request = storeVar.get(1);
+  const txtEditorDB = await openDB("jate", 1);
+  const transVar = txtEditorDB.transaction("jate", "readonly");
+  const storeVar = transVar.objectStore("jate");
+  const request = storeVar.getAll();
   const result = await request;
-  result
-    ? console.log("Data retrieved from the database", result.value)
-    : console.log("Data not found in the database");
+  if (result.length > 0) {
+    console.log("Data retrieved from the database", result);
+  } else {
+    console.log("Data not found in the database");
+  }
 };
 
 initdb();
