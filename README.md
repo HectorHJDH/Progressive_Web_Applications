@@ -1,4 +1,4 @@
-# NoSQL-Challenge_Social-Network-API
+# PWA - Just Another Text Editor (J.A.T.E)
 
 ## Description
 This challenge 19 objective is to build to build a text editor that runs in the browser it will feature a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. The application will also function offline.
